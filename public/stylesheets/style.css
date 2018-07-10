@@ -1,0 +1,47 @@
+
+
+.container{
+  width: 80%;
+  height: 450px;
+  
+  border: 1px solid #ccc;
+  margin: 10px 0 10px 60px;
+  
+  
+  
+}
+
+.post{
+  width: 1020px;
+  min-height: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+  border: #000 solid 2px;
+  margin-top: 60px;
+  padding: 20px 20px;
+  background-color: #fff;
+}
+.btn{
+  margin: 5px!important;
+}
+body{
+  margin: 5px;
+  padding: 15px;
+}
+.indexa{
+  /* background-color: gray; */
+  /* color: white; */
+  padding: 5px;
+ 
+  text-decoration: none;
+
+  font-size: 40px;
+
+}
+.indexd{
+  width: 500px;
+
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}

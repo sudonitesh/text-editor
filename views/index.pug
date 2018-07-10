@@ -1,0 +1,231 @@
+extends layout
+
+block content
+    
+    if errors
+        each error,i in errors
+            div.alert.alert-danger #{error.msg}
+    //made with the help of ckeditor
+    //made by Nitesh Tosniwal
+    .animtext
+        pre.display#output
+        
+    div.indexd
+        a(href="/editor", class="indexa") text editor
+            i
+    script.
+        window.onload = display;
+
+        var output = $('#output'),
+            text   = " $ Get HTML Code without writing HTML!\n\n\t$ Share the link of the text", 
+            interval,
+            i      = 0; 
+
+        function display(){
+        if(i<=text.length){
+            output.text(text.substring(0,i));
+            i++;
+        }else{
+            clearTimeout(interval);
+            return false;
+        }
+        interval = setTimeout('display()',70);
+        }
+    style.
+        .animtext{
+            font-family: sans-serif;
+            color: #D78400;
+            padding-top: 50px;
+        }
+        .display{
+            font-family: 'Source Code Pro', monospace;
+            position: relative;    
+            display: block;        
+        }
+        .display{  
+            text-align : center;  
+            font-family: Garamond;
+            color: #f4f4f4;
+            margin-bottom:20px;
+        }
+
+        body {
+            background: grey;
+            font-family: "Arial";
+            background-size: cover;
+        }
+
+        a {
+        /*  styling */
+        display: inline-block;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 5px;
+        color: #FAFAFA;
+        border: 3px solid #FAFAFA;
+        padding: 25px;
+        /*  centering */
+        position: absolute;
+        text-align: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.5);
+        -webkit-transition: background 0.15s ease-in-out;
+        -moz-transition: background 0.15s ease-in-out;
+        -ms-transition: background 0.15s ease-in-out;
+        -o-transition: background 0.15s ease-in-out;
+        transition: background 0.15s ease-in-out;
+        }
+        a:hover {
+        background: rgba(8, 97, 76, 0.6);
+        }
+
+        i {
+        /*   positioning */
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        /*   gradient   */
+        background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 1%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.85) 71%, rgba(255, 255, 255, 0) 100%);
+        /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(1%, rgba(255, 255, 255, 0.03)), color-stop(30%, rgba(255, 255, 255, 0.85)), color-stop(50%, rgba(255, 255, 255, 0.85)), color-stop(70%, rgba(255, 255, 255, 0.85)), color-stop(71%, rgba(255, 255, 255, 0.85)), color-stop(100%, rgba(255, 255, 255, 0)));
+        /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 1%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.85) 71%, rgba(255, 255, 255, 0) 100%);
+        /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 1%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.85) 71%, rgba(255, 255, 255, 0) 100%);
+        /* Opera 11.10+ */
+        background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 1%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.85) 71%, rgba(255, 255, 255, 0) 100%);
+        /* IE10+ */
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.03) 1%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 0.85) 71%, rgba(255, 255, 255, 0) 100%);
+        /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 );
+        /* IE6-9 */
+        /*  forming the shine element
+            play around with the width, skew and gradient to get different effects
+            */
+        width: 15%;
+        height: 100%;
+        transform: skew(-10deg, 0deg);
+        -webkit-transform: skew(-10deg, 0deg);
+        -moz-transform: skew(-10deg, 0deg);
+        -ms-transform: skew(-10deg, 0deg);
+        -o-transform: skew(-10deg, 0deg);
+        /*  animating it  */
+        animation: move 2s;
+        animation-iteration-count: infinite;
+        animation-delay: 1s;
+        -webkit-animation: move 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-delay: 1s;
+        -moz-transform: skew(-10deg, 0deg);
+        -moz-animation: move 2s;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-delay: 1s;
+        -ms-transform: skew(-10deg, 0deg);
+        -ms-animation: move 2s;
+        -ms-animation-iteration-count: infinite;
+        -ms-animation-delay: 1s;
+        -o-transform: skew(-10deg, 0deg);
+        -o-animation: move 2s;
+        -o-animation-iteration-count: infinite;
+        -o-animation-delay: 1s;
+        }
+
+        /*  */
+        @keyframes move {
+        0% {
+            left: 0;
+            opacity: 0;
+        }
+        5% {
+            opacity: 0.0;
+        }
+        48% {
+            opacity: 0.2;
+        }
+        80% {
+            opacity: 0.0;
+        }
+        100% {
+            left: 82%;
+        }
+        }
+        @-webkit-keyframes move {
+        0% {
+            left: 0;
+            opacity: 0;
+        }
+        5% {
+            opacity: 0.0;
+        }
+        48% {
+            opacity: 0.2;
+        }
+        80% {
+            opacity: 0.0;
+        }
+        100% {
+            left: 82%;
+        }
+        }
+        @-moz-keyframes move {
+        0% {
+            left: 0;
+            opacity: 0;
+        }
+        5% {
+            opacity: 0.0;
+        }
+        48% {
+            opacity: 0.2;
+        }
+        80% {
+            opacity: 0.0;
+        }
+        100% {
+            left: 88%;
+        }
+        }
+        @-ms-keyframes move {
+        0% {
+            left: 0;
+            opacity: 0;
+        }
+        5% {
+            opacity: 0.0;
+        }
+        48% {
+            opacity: 0.2;
+        }
+        80% {
+            opacity: 0.0;
+        }
+        100% {
+            left: 82%;
+        }
+        }
+        @-o-keyframes move {
+        0% {
+            left: 0;
+            opacity: 0;
+        }
+        5% {
+            opacity: 0.0;
+        }
+        48% {
+            opacity: 0.2;
+        }
+        80% {
+            opacity: 0.0;
+        }
+        100% {
+            left: 82%;
+        }
+        }
+

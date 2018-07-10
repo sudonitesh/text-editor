@@ -1,0 +1,59 @@
+extends layout
+
+block content
+
+    
+    if errors
+        each error,i in errors
+            div.alert.alert-danger #{error.msg}
+    .container    
+      form(action="/editor", method="post")
+          .form-group
+              textarea.form-control(name='body', id="body", class="editorbody")
+          input.btn.btn-primary(type="submit",formaction="/editor/getlink", name='getlink', value="Get Link")        
+          script(src='/ckeditor/ckeditor.js')
+          script
+              | CKEDITOR.replace('body');
+
+    style.
+        body{
+            background: -moz-linear-gradient(184deg, rgba(0,0,0,0.55) 0%, rgba(117,117,117,0.55) 100%); /* ff3.6+ */
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(117,117,117,0.55)), color-stop(100%, rgba(0,0,0,0.55))); /* safari4+,chrome */
+            background: -webkit-linear-gradient(184deg, rgba(0,0,0,0.55) 0%, rgba(117,117,117,0.55) 100%); /* safari5.1+,chrome10+ */
+            background: -o-linear-gradient(184deg, rgba(0,0,0,0.55) 0%, rgba(117,117,117,0.55) 100%); /* opera 11.10+ */
+            background: -ms-linear-gradient(184deg, rgba(0,0,0,0.55) 0%, rgba(117,117,117,0.55) 100%); /* ie10+ */
+            background: linear-gradient(266deg, rgba(0,0,0,0.55) 0%, rgba(117,117,117,0.55) 100%); /* w3c */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#757575', endColorstr='#000000',GradientType=1 ); /* ie6-9 */
+        }
+        .container{
+            margin: auto;
+        }
+        .btn{
+            width: 170px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 5px 8px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+            color: #fff;
+            background-color: #4f5051;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 6px #999;
+        }
+        .btn:hover{
+            background-color: #3d3e3f
+        }
+        .btn:active {
+            background-color: #313233;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        #cke_18_label{
+            background-color: #069b30!important;
+            color: #fff;
+        }     
+                    

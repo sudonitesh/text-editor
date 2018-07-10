@@ -1,0 +1,80 @@
+extends layout
+
+block content
+  div.linksrcall  
+    input#myInput(type='text' value= link)
+    .tooltip
+        button(onclick='myFunction()' onmouseout='outFunc()')
+            span#myTooltip.tooltiptext Copy to Clipboard
+            
+  style.
+    body{
+      background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%); /* ff3.6+ */
+      background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(0,0,0,1))); /* safari4+,chrome */
+      background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%); /* safari5.1+,chrome10+ */
+      background: -o-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%); /* opera 11.10+ */
+      background: -ms-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%); /* ie10+ */
+      background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%); /* w3c */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#ffffff',GradientType=1 ); /* ie6-9 */
+    }
+    input:focus,
+    select:focus,
+    textarea:focus,
+    button:focus {
+        outline: none;
+    }
+    .linksrcall{
+      width: 300px;
+      height: 150px;
+      position: absolute;
+      top:0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto; 
+      text-align: center;
+    }
+    input{
+      margin: 5px;
+      padding: 3px;
+      height: 30px;
+      width: 300px;
+      font-size:18px;
+      border-radius: 25px;
+      background: rgb(255,255,255);
+      background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(207,207,212,1) 50%, rgba(145,145,145,1) 100%);
+    }
+    button{
+      padding: 5px 8px;
+      font-size: 16px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      color: #fff;
+      background-color: #4f5051;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 6px #999;
+    }
+    button:hover {background-color: #3d3e3f}
+
+    button:active {
+      background-color: #313233;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    } 
+
+    
+
+  script.
+    function myFunction() {
+    var copyText = document.getElementById("myInput");
+    copyText.select();
+    document.execCommand("copy");
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copied: " + copyText.value;
+    }
+    function outFunc() {
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copy to clipboard";
+    }
