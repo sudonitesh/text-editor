@@ -20,9 +20,12 @@ A hosted text-editor that can be used to share the typed text through url and ge
 
 # To use Live 
 <pre>
-Go to: https://warm-island-53824.herokuapp.com/
+Go to: [Text Editor](https://warm-island-53824.herokuapp.com/)
     
     -> To get Source Code of the text typed, click on "Source" button.
     -> To share the text through URL, click on "Get Link" and "Copy to Clipboard" on Redirected page. 
         You can send the Copied URL to anyone with the same formatting... 
 </pre>
+*********
+*In the way to make things easier*
+
