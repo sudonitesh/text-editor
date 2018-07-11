@@ -22,5 +22,5 @@ Go to: https://warm-island-53824.herokuapp.com/
     
     -> To get Source Code of the text typed, click on "Source" button.
     -> To share the text through URL, click on "Get Link" and "Copy to Clipboard" on Redirected page. 
-        You can send the Copied URL to anyone... 
+        You can send the Copied URL to anyone with the same formatting... 
 </pre>
