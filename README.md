@@ -1,4 +1,6 @@
 # text-editor
+[![HitCount](http://hits.dwyl.io/sudonitesh/text-editor.svg)](http://hits.dwyl.io/sudonitesh/text-editor)
+
 A hosted text-editor that can be used to share the typed text through url and get html code from the typed text. 
 
 # To Develop 
