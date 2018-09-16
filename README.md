@@ -27,5 +27,5 @@ Go to: [Text Editor](https://warm-island-53824.herokuapp.com/)
         You can send the Copied URL to anyone with the same formatting... 
 </pre>
 *********
-*In the way to make things easier*
+*On the way to make things easier*
 
